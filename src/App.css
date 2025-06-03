@@ -1,0 +1,378 @@
+/* Base Styles */
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #f9fafb;
+  --accent-color: #10b981;
+  --text-color: #1f2937;
+  --light-gray: #f3f4f6;
+  --medium-gray: #e5e7eb;
+  --dark-gray: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Center the entire app */
+html, body {
+  height: 100%;
+  background-color: var(--light-gray);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.app-header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--medium-gray);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Footer */
+.app-footer {
+  padding: 1rem 2rem;
+  text-align: center;
+  color: var(--dark-gray);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--medium-gray);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Step Container */
+.step-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.step-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.step-container p {
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Name Form */
+.name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.name-form input {
+  padding: 1rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.name-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.name-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.name-form button:hover {
+  background-color: #4338ca;
+}
+
+/* Industry Grid */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Rest of your existing styles remain the same... */
+/* [Keep all your existing styles for .industry-card, .style-options, etc.] */
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .app-main {
+    padding: 1.5rem;
+  }
+  
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .customize-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header, .app-footer {
+    padding: 1rem;
+  }
+  
+  .app-main {
+    padding: 1rem;
+  }
+  
+  .industry-grid,
+  .logo-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .step-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .step-container p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Logo Selection Enhancements */
+.logo-concept-info {
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-top: 1px solid var(--medium-gray);
+  text-align: left;
+}
+
+.logo-concept-info h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.logo-concept-info p {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.selection-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.secondary-button {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+/* Customization Page */
+.customize-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.logo-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.preview-wrapper {
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.option-group {
+  margin-bottom: 2rem;
+}
+
+.option-group h3 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.color-palette {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+}
+
+.color-option.selected {
+  border-color: var(--text-color);
+  transform: scale(1.1);
+}
+
+.color-picker {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.layout-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.layout-option {
+  padding: 0.75rem;
+  background-color: white;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.layout-option.active {
+  border-color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.typography-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.save-button {
+  background-color: var(--accent-color);
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .customize-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .preview-wrapper {
+    min-height: 200px;
+  }
+  
+  .layout-options {
+    grid-template-columns: 1fr;
+  }
+}
